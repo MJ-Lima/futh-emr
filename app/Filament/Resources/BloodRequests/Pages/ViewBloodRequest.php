@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Filament\Resources\BloodRequests\Pages;
+
+use App\Filament\Resources\BloodRequests\BloodRequestResource;
+use Filament\Resources\Pages\ViewRecord;
+
+class ViewBloodRequest extends ViewRecord
+{
+    protected static string $resource = BloodRequestResource::class;
+}

@@ -1,0 +1,5 @@
+<?php
+namespace App\Filament\Resources\GeneralStoreRequisitions\Pages;
+use App\Filament\Resources\GeneralStoreRequisitions\GeneralStoreRequisitionResource;
+use Filament\Resources\Pages\EditRecord;
+class EditGeneralStoreRequisition extends EditRecord { protected static string $resource = GeneralStoreRequisitionResource::class; }

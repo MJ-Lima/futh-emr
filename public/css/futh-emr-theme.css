@@ -1,0 +1,451 @@
+/* =============================================================
+   FUTH Lafia EMR — Green Theme for Filament v3
+   Place this file at: resources/css/futh-emr-theme.css
+   Then import it in resources/css/app.css BEFORE @tailwind directives
+   ============================================================= */
+
+/* -----------------------------------------------------------------
+   1. BRAND COLORS — CSS Custom Properties
+   ----------------------------------------------------------------- */
+:root {
+    --futh-primary: #16a34a;          /* green-600 */
+    --futh-primary-light: #22c55e;    /* green-500 */
+    --futh-primary-dark: #15803d;     /* green-700 */
+    --futh-primary-50: #f0fdf4;
+    --futh-primary-100: #dcfce7;
+    --futh-primary-200: #bbf7d0;
+    --futh-accent: #0d9488;           /* teal-600 */
+    --futh-sidebar-bg: #ffffff;
+    --futh-sidebar-active: #22c55e;
+    --futh-sidebar-text: #4b5563;
+    --futh-sidebar-hover-bg: #f0fdf4;
+    --futh-bg: #f3f4f6;
+    --futh-card-bg: #ffffff;
+    --futh-text: #111827;
+    --futh-text-secondary: #6b7280;
+    --futh-border: #e5e7eb;
+}
+
+/* -----------------------------------------------------------------
+   2. FILAMENT COLOR OVERRIDES — Primary = Green
+   ----------------------------------------------------------------- */
+
+/* Replace Filament's default primary (orange) with green */
+.fi-color-primary {
+    --fi-primary-50: #f0fdf4 !important;
+    --fi-primary-100: #dcfce7 !important;
+    --fi-primary-200: #bbf7d0 !important;
+    --fi-primary-300: #86efac !important;
+    --fi-primary-400: #4ade80 !important;
+    --fi-primary-500: #22c55e !important;
+    --fi-primary-600: #16a34a !important;
+    --fi-primary-700: #15803d !important;
+    --fi-primary-800: #166534 !important;
+    --fi-primary-900: #14532d !important;
+}
+
+/* -----------------------------------------------------------------
+   3. SIDEBAR — White with green accents
+   ----------------------------------------------------------------- */
+
+/* Sidebar background */
+.fi-sidebar {
+    background-color: var(--futh-sidebar-bg) !important;
+    border-right: 1px solid var(--futh-border) !important;
+}
+
+/* Sidebar brand/logo area */
+.fi-sidebar .fi-sidebar-header,
+.fi-sidebar-nav .fi-sidebar-brand {
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+/* Sidebar brand text */
+.fi-sidebar .fi-sidebar-brand-text {
+    color: var(--futh-primary) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.025em;
+}
+
+/* Sidebar navigation items */
+.fi-sidebar-nav-items .fi-sidebar-item {
+    color: var(--futh-sidebar-text) !important;
+    border-radius: 0.5rem !important;
+    margin: 2px 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Sidebar item hover */
+.fi-sidebar-nav-items .fi-sidebar-item:hover {
+    background-color: var(--futh-sidebar-hover-bg) !important;
+    color: var(--futh-primary) !important;
+}
+
+/* Sidebar item active/selected */
+.fi-sidebar-nav-items .fi-sidebar-item-active {
+    background-color: var(--futh-sidebar-active) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3) !important;
+}
+
+/* Active item icon */
+.fi-sidebar-nav-items .fi-sidebar-item-active svg {
+    color: #ffffff !important;
+}
+
+/* Sidebar group/collapsible headers */
+.fi-sidebar-nav-items .fi-sidebar-group {
+    color: #9ca3af !important;
+    font-size: 0.7rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Sidebar sub-items (nested) */
+.fi-sidebar-nav-items .fi-sidebar-item.fi-sidebar-item-sub {
+    padding-left: 2.5rem !important;
+}
+
+/* Sidebar badges (counters) */
+.fi-sidebar-badge {
+    background-color: var(--futh-primary-100) !important;
+    color: var(--futh-primary-dark) !important;
+    font-weight: 600 !important;
+}
+
+/* Sidebar user section at bottom */
+.fi-sidebar .fi-sidebar-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    background-color: #fafafa !important;
+}
+
+/* -----------------------------------------------------------------
+   4. TOP HEADER BAR
+   ----------------------------------------------------------------- */
+.fi-topbar {
+    background-color: var(--futh-card-bg) !important;
+    border-bottom: 1px solid var(--futh-border) !important;
+}
+
+/* Header heading text */
+.fi-topbar .fi-topbar-heading,
+.fi-page-heading-title {
+    color: var(--futh-text) !important;
+}
+
+/* Header subheading */
+.fi-topbar .fi-topbar-subheading {
+    color: var(--futh-text-secondary) !important;
+}
+
+/* -----------------------------------------------------------------
+   5. MAIN CONTENT AREA
+   ----------------------------------------------------------------- */
+.fi-main {
+    background-color: var(--futh-bg) !important;
+}
+
+/* -----------------------------------------------------------------
+   6. STAT CARDS — Green themed with rounded corners & shadows
+   ----------------------------------------------------------------- */
+
+/* Stat card container */
+.fi-stats-overview-card {
+    border-radius: 0.75rem !important;
+    overflow: hidden !important;
+    border: 1px solid #f0f0f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fi-stats-overview-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Stat card icon backgrounds — color-specific */
+.fi-stats-overview-card .fi-stat-icon {
+    border-radius: 0.625rem !important;
+    padding: 0.625rem !important;
+}
+
+/* Green (success) stat icons */
+.fi-stats-overview-card[data-color="success"] .fi-stat-icon,
+.fi-stats-overview-card:has(.text-success) .fi-stat-icon {
+    background-color: var(--futh-primary-100) !important;
+    color: var(--futh-primary-dark) !important;
+}
+
+/* Blue (info) stat icons */
+.fi-stats-overview-card[data-color="info"] .fi-stat-icon,
+.fi-stats-overview-card:has(.text-info) .fi-stat-icon {
+    background-color: #dbeafe !important;
+    color: #1d4ed8 !important;
+}
+
+/* Amber (warning) stat icons */
+.fi-stats-overview-card[data-color="warning"] .fi-stat-icon,
+.fi-stats-overview-card:has(.text-warning) .fi-stat-icon {
+    background-color: #fef3c7 !important;
+    color: #b45309 !important;
+}
+
+/* Red (danger) stat icons */
+.fi-stats-overview-card[data-color="danger"] .fi-stat-icon,
+.fi-stats-overview-card:has(.text-danger) .fi-stat-icon {
+    background-color: #fee2e2 !important;
+    color: #b91c1c !important;
+}
+
+/* Stat description with icon */
+.fi-stats-overview-card .fi-stat-description {
+    color: var(--futh-text-secondary) !important;
+}
+
+/* Stat description icon */
+.fi-stats-overview-card .fi-stat-description svg {
+    color: var(--futh-text-secondary) !important;
+}
+
+/* Stat chart line */
+.fi-stats-overview-card svg.fi-stat-chart line {
+    stroke: var(--futh-primary-300) !important;
+}
+
+.fi-stats-overview-card svg.fi-stat-chart path {
+    stroke: var(--futh-primary) !important;
+}
+
+/* Stat value text */
+.fi-stats-overview-card .fi-stat-value {
+    color: var(--futh-text) !important;
+    font-weight: 700 !important;
+}
+
+/* Stat label text */
+.fi-stats-overview-card .fi-stat-label {
+    color: var(--futh-text-secondary) !important;
+}
+
+/* -----------------------------------------------------------------
+   7. SECTION CONTAINERS (Widget wrappers)
+   ----------------------------------------------------------------- */
+.fi-section {
+    border-radius: 0.75rem !important;
+    background-color: var(--futh-card-bg) !important;
+    border: 1px solid #f0f0f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    overflow: hidden !important;
+}
+
+/* Section heading */
+.fi-section-heading {
+    color: var(--futh-text) !important;
+    font-weight: 600 !important;
+}
+
+/* -----------------------------------------------------------------
+   8. BUTTONS — Green primary, rounded
+   ----------------------------------------------------------------- */
+
+/* Primary button */
+.fi-btn-primary {
+    background-color: var(--futh-primary) !important;
+    color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.fi-btn-primary:hover {
+    background-color: var(--futh-primary-dark) !important;
+    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.25) !important;
+}
+
+/* Secondary button */
+.fi-btn-secondary {
+    border-radius: 0.5rem !important;
+    border: 1px solid var(--futh-border) !important;
+    color: var(--futh-text) !important;
+}
+
+.fi-btn-secondary:hover {
+    background-color: var(--futh-primary-50) !important;
+    border-color: var(--futh-primary-200) !important;
+    color: var(--futh-primary-dark) !important;
+}
+
+/* Danger button */
+.fi-btn-danger {
+    border-radius: 0.5rem !important;
+}
+
+/* -----------------------------------------------------------------
+   9. FORM INPUTS — Rounded with green focus
+   ----------------------------------------------------------------- */
+
+/* Input fields */
+.fi-input,
+.fi-select,
+.fi-textarea,
+.fi-datepicker-input {
+    border-radius: 0.5rem !important;
+    border-color: #d1d5db !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Input focus state */
+.fi-input:focus,
+.fi-select:focus,
+.fi-textarea:focus,
+.fi-datepicker-input:focus {
+    border-color: var(--futh-primary-light) !important;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15) !important;
+}
+
+/* Input with icon */
+.fi-input-affix-wrapper {
+    border-radius: 0.5rem !important;
+}
+
+/* -----------------------------------------------------------------
+   10. TABLES — Clean with green accents
+   ----------------------------------------------------------------- */
+
+/* Table header */
+.fi-table .fi-table-header {
+    background-color: #f9fafb !important;
+    border-bottom: 2px solid var(--futh-primary-100) !important;
+}
+
+/* Table header cell */
+.fi-table .fi-table-header-cell {
+    color: var(--futh-text-secondary) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Table row hover */
+.fi-table .fi-table-row:hover {
+    background-color: var(--futh-primary-50) !important;
+}
+
+/* Table pagination */
+.fi-table .fi-pagination-button-active {
+    background-color: var(--futh-primary) !important;
+    color: #ffffff !important;
+}
+
+/* Table action buttons */
+.fi-table-actions .fi-table-action {
+    border-radius: 0.375rem !important;
+}
+
+/* -----------------------------------------------------------------
+   11. BADGES — Status pills
+   ----------------------------------------------------------------- */
+
+/* All badges slightly rounded */
+.fi-badge {
+    border-radius: 9999px !important;
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    padding: 2px 10px !important;
+}
+
+/* -----------------------------------------------------------------
+   12. AUTH / LOGIN PAGE
+   ----------------------------------------------------------------- */
+
+/* Login card */
+.fi-auth-login-card {
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #f0f0f0 !important;
+}
+
+/* Login brand */
+.fi-auth-login-brand {
+    color: var(--futh-primary) !important;
+}
+
+/* -----------------------------------------------------------------
+   13. NOTIFICATIONS & ALERTS
+   ----------------------------------------------------------------- */
+
+/* Success notification */
+.fi-notification.success {
+    border-left: 4px solid var(--futh-primary) !important;
+}
+
+/* -----------------------------------------------------------------
+   14. MODALS & DIALOGS
+   ----------------------------------------------------------------- */
+
+/* Modal header */
+.fi-modal-heading {
+    color: var(--futh-text) !important;
+}
+
+/* -----------------------------------------------------------------
+   15. TABS
+   ----------------------------------------------------------------- */
+
+/* Active tab indicator */
+.fi-tabs .fi-tab-active {
+    color: var(--futh-primary) !important;
+    border-bottom-color: var(--futh-primary) !important;
+}
+
+.fi-tabs .fi-tab:hover {
+    color: var(--futh-primary-dark) !important;
+}
+
+/* -----------------------------------------------------------------
+   16. GLOBAL UTILITIES
+   ----------------------------------------------------------------- */
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Page content wrapper — add subtle padding */
+.fi-page-content {
+    padding: 1.5rem !important;
+}
+
+/* Form section cards */
+.fi-form-section-card {
+    border-radius: 0.75rem !important;
+    border: 1px solid #f0f0f0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Breadcrumbs */
+.fi-breadcrumbs .fi-breadcrumb-item {
+    color: var(--futh-text-secondary) !important;
+}
+
+.fi-breadcrumbs .fi-breadcrumb-item-active,
+.fi-breadcrumbs .fi-breadcrumb-item:last-child {
+    color: var(--futh-primary) !important;
+    font-weight: 600 !important;
+}

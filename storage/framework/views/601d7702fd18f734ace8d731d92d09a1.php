@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="http://192.168.1.244:8000/css/futh-emr-theme.css"><meta name="futh-emr-version" content="2.0"><?php /**PATH C:\xampp\htdocs\futh-lafia-emr\storage\framework\views/f8e3272c12eb76b584931a864145872c.blade.php ENDPATH**/ ?>

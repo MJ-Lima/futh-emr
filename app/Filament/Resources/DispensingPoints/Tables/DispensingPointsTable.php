@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Filament\Resources\DispensingPoints\Tables;
+
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables\Enums\RecordActionsPosition;
+use Filament\Tables\Table;
+
+class DispensingPointsTable
+{
+    public static function configure(Table $table): Table
+    {
+        return $table
+            ->columns([
+                    TextColumn::make('code')->label('Code')->searchable(),
+                    TextColumn::make('name')->label('Point')->searchable(),
+                    TextColumn::make('location')->label('Location')->searchable(),
+                    TextColumn::make('inCharge.name')->label('In-Charge')->sortable(),
+                    IconColumn::make('status')->label('Active')->boolean(),
+            ])
+            ->filters([
+                //
+            ])
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
+            ], position: RecordActionsPosition::BeforeColumns)
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+}

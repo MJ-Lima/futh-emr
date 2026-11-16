@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Filament\Resources\ClinicSchedules\Pages;
+
+use App\Filament\Resources\ClinicSchedules\ClinicScheduleResource;
+use Filament\Resources\Pages\EditRecord;
+
+class EditClinicSchedule extends EditRecord
+{
+    protected static string $resource = ClinicScheduleResource::class;
+}
